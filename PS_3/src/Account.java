@@ -76,7 +76,9 @@ public class Account {
 	
 	
 	
-	public static void main(String[] args) {
+/*
+ * 	public static void main(String[] args) {
+
 		Scanner input = new Scanner(System.in);
 		
 		Account Nick = new Account(100001, 10000);
@@ -97,6 +99,6 @@ public class Account {
 		String fs;
 		fs = String.format("Your balance is %.2f", Nick.balance);
 		System.out.print(fs);
-	}
+ */
 	
 }
