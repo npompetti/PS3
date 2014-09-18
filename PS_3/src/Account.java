@@ -3,6 +3,8 @@
 import java.util.Date;
 import java.util.Scanner;
 
+//import CISC181.Week3.Package4.InsufficientFundsException;
+
 public class Account {
 	
 	//data field
@@ -65,11 +67,18 @@ public class Account {
 		double monthly_interest= annualInterestRate/12;
 		return monthly_interest;
 	}
-	
-	public void Withdraw(double money){
-		balance-=money;
+	//Withdraw method with insufficient funds exception added
+	public void Withdraw(double money) throws InsufficientFundsException{
+		if(money <=balance){
+		balance -= money;
+		}
+		else{
+			double not_available = money - balance;
+			throw new InsufficientFundsException(not_available);
+		}
 	}
-	
+		
+	//public method for user to deposit money
 	public void Deposit(double money){
 		balance+=money;
 	}
